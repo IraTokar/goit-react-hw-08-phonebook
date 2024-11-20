@@ -4,6 +4,7 @@ import { filterReducer } from "./contacts/filterSlice";
 import { FLUSH, PAUSE, PERSIST, persistStore, PURGE, REGISTER, REHYDRATE } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
+import { authReducer } from "./auth/authSlice";
 
 const authPersistConfig = {
   key: 'auth',
