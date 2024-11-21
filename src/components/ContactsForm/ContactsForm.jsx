@@ -10,8 +10,6 @@ import { selectContact } from 'components/redux/contacts/selectors';
 import { addContact } from 'components/redux/contacts/operations';
 
 
-
-
 const nameId = nanoid();
 const numberId = nanoid();
 
@@ -70,6 +68,7 @@ return (
   </form>
 )
 };
+
 
 
 
