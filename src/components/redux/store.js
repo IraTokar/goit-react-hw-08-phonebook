@@ -5,7 +5,6 @@ import { contactsReducer } from "./contacts/contactsSlice";
 import { filterReducer } from "./contacts/filterSlice";
 import { authReducer } from "./auth/authSlice";
 
-
 const authPersistConfig = {
   key: 'auth',
   storage,
@@ -18,12 +17,13 @@ export const store = configureStore({
         filter: filterReducer,
         auth: persistReducer(authPersistConfig, authReducer),
     },
-   middleware: getDefaultMiddleware =>
+    middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+
     devTools: process.env.NODE_ENV === 'development',
 })
 

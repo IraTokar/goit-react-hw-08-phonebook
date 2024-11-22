@@ -1,4 +1,5 @@
-import { logIn } from "components/redux/auth/authOperations";
+
+import { register } from "components/redux/auth/authOperations";
 import { useDispatch } from "react-redux"
 
 export default function RegisterForm() {
@@ -9,7 +10,7 @@ export default function RegisterForm() {
 
         const form = event.currentTarget;
         dispatch(
-            logIn({
+            register({
                 name: form.elements.name.value,
                 email: form.elements.email.value,
                 password: form.elements.password.value,
@@ -22,13 +23,13 @@ export default function RegisterForm() {
         <div>
             <form onSubmit={handleSubmit} autoComplete="off">
                 <label >Name</label>
-                <input type="text" name="name"/>
+                <input type="text" name="name" required/>
 
                 <label >Email</label>
-                <input type="email" name="email"/>
+                <input type="email" name="email" required/>
 
                 <label >Password</label>
-                <input type="password" name="password" />
+                <input type="password" name="password" required/>
                 
                 <button type="submit">Register</button>
             </form>
